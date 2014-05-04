@@ -66,17 +66,13 @@ public class GsonHelper
 
 	public ArrayList<HashMap<String, Object>> weatherForcastToMap(WeatherForcast weatherForcast)
 	{
-		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String,Object>>(weatherForcast.list.size());		
-
-		int i = 0;
-
+		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String,Object>>(weatherForcast.list.size());
+	
 		for( WList listItem : weatherForcast.list )
 		{
 			HashMap<String,Object> map = new HashMap<String,Object>(5);
 
-			map.put(WeatherForcast.MAX,listItem.temp.day); // org
-			//i++; map.put("max",i*4.2F/2); // Yaron debug remove it !!!
-			//i++; map.put("max",i*4.2F/2+21); // Yaron debug remove it !!!
+			map.put(WeatherForcast.MAX,listItem.temp.day); 			
 			map.put(WeatherForcast.HUMIDITY, listItem.humidity);
 			map.put(WeatherForcast.DATE, new Date(listItem.dt * 1000)); // Convert to Java date.
 			map.put(WeatherForcast.DESCRIPTION, listItem.weather.get(0).description);
@@ -130,31 +126,7 @@ public class GsonHelper
 			weatherForcastData = null;
 		}		
 
-		return weatherForcastData;
-
-		//		ArrayList<HashMap<String, Object>> list = null;
-		//		WeatherForcastData weatherForcastData = new WeatherForcastData();
-		//		int average;
-		//
-		//		try
-		//		{
-		//			//String jsonString = readWeatherJsonFromAsset();
-		//			String jsonString = readJsonStringFromFile(context,fileName);
-		//			WeatherForcast weatherForcast = parseJsonToWeatherForcast(jsonString);
-		//			list = weatherForcastToMap(weatherForcast);			
-		//			average = calculateAverageTemperature(list);			
-		//			orderList(list);
-		//			
-		//			weatherForcastData.setWeatherList(list);
-		//			weatherForcastData.setAverage(average);
-		//		}
-		//		catch(Exception ex)
-		//		{
-		//			ex.printStackTrace();
-		//			weatherForcastData = null;
-		//		}		
-		//
-		//		return weatherForcastData;
+		return weatherForcastData;		
 	}
 
 	private WeatherForcastData processWeatherJson(String jsonString)
@@ -181,21 +153,6 @@ public class GsonHelper
 
 		return weatherForcastData;		
 	}	
-
-//	class MapComparator implements Comparator<Map<String, Object>>
-//	{
-//		public int compare(Map<String, Object> first, Map<String, Object> second)
-//		{			
-//			Date firstValue = (Date)first.get(WeatherForcast.DATE);
-//			Date secondValue = (Date)second.get(WeatherForcast.DATE);
-//			return firstValue.compareTo(secondValue);					
-//		}
-//	}
-//
-//	public void orderList(ArrayList<HashMap<String, Object>> list)
-//	{
-//		Collections.sort(list, new MapComparator());
-//	}	
 
 	public void writeJsonStringToFile(Context context,String jsonString,String fileName) throws IOException
 	{
@@ -239,23 +196,6 @@ public class GsonHelper
 		}
 
 		return stringBuilder.toString();
-	}
-
-//	public int calculateAverageTemperature(ArrayList<HashMap<String, Object>> list)
-//	{
-//		// Calculate average.
-//		float total = 0;		
-//		float tmp;
-//		
-//		for( Map<String, ?> listItem : list)
-//		{
-//			tmp = (Float)listItem.get(WeatherForcast.MAX);
-//			total += tmp;
-//		}
-//
-//		int average = Math.round(total / list.size());		
-//
-//		return average;
-//	}	
+	}	
 }
 

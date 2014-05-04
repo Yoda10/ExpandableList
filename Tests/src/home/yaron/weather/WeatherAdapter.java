@@ -19,8 +19,7 @@ public class WeatherAdapter extends SimpleAdapter
 {
 	private Context context;
 	private List<? extends Map<String, ?>> weatherList;
-	private int average;
-	//private String cityName;
+	private int average;	
 
 	public WeatherAdapter(Context context, List<? extends Map<String, ?>> data,
 			int resource, String[] from, int[] to,int average)
@@ -29,28 +28,7 @@ public class WeatherAdapter extends SimpleAdapter
 		this.context = context;
 		this.weatherList = data;
 		this.average = average;
-
-		//		// Calculate average.
-		//		float total = 0;		
-		//		float tmp;
-		//		for( Map<String, ?> listItem : data)
-		//		{
-		//			tmp = (Float)listItem.get("max");
-		//			total += tmp;
-		//		}
-		//
-		//		average = Math.round(total / data.size());
-	}
-
-	//	public List<? extends Map<String, ?>> getWeatherList() 
-	//	{
-	//		return this.weatherList;
-	//	}	
-	//	
-	//	public void setWeatherList(List<? extends Map<String, ?>> data)
-	//	{
-	//		this.weatherList = data;
-	//	}
+	}	
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent)
@@ -61,14 +39,10 @@ public class WeatherAdapter extends SimpleAdapter
 			convertView = layoutInflater.inflate(R.layout.weather_item, null);
 		}
 
-		//		// Tempreture on item.
-		final float maxTemp = (Float)weatherList.get(position).get(WeatherForcast.MAX); 
-		//		TextView name = (TextView)convertView.findViewById(R.id.item_weather_name);
-		//		name.setText(String.valueOf(maxTemp));
+		final float maxTemp = (Float)weatherList.get(position).get(WeatherForcast.MAX);		
 
 		// weather view - position
-		final WeatherView weatherView = (WeatherView)convertView.findViewById(R.id.item_weather_sun);		 
-		//weatherView.setPosition(Math.round(maxTemp)-1); //org
+		final WeatherView weatherView = (WeatherView)convertView.findViewById(R.id.item_weather_sun);		
 		final float scalePosition = (weatherView.getSteps() / 2F) + maxTemp - average; // new
 		weatherView.setPosition(Math.round(scalePosition)-1); // new
 		weatherView.setTextDrawable(String.valueOf(Math.round(maxTemp)));
@@ -78,8 +52,7 @@ public class WeatherAdapter extends SimpleAdapter
 		final SimpleDateFormat dateFormat = new SimpleDateFormat("EEE",Locale.US);		
 		weatherView.setLeftText(dateFormat.format(date));			
 
-		// weather view - drawable Id
-		//int heatIndex = (Integer)weatherList.get(position).get(WeatherForcastData.HEAT_INDEX);
+		// weather view - drawable Id		
 		setDrawableId(weatherView, maxTemp,position);
 
 		return convertView;
@@ -119,53 +92,5 @@ public class WeatherAdapter extends SimpleAdapter
 		{
 			Log.v("Yaron", "Image not found on range.");
 		}
-	}
-
-	//	private void setDrawableId(WeatherView weatherView, float maxTemp)
-	//	{
-	//		if( maxTemp >= 1F && maxTemp < 4.2F )
-	//		{
-	//			weatherView.setDrawableId(R.drawable.winter_1_1);
-	//		}
-	//		else if( maxTemp >= 4.2F && maxTemp < 8.4F )
-	//		{
-	//			weatherView.setDrawableId(R.drawable.winter_2);
-	//		}
-	//		else if( maxTemp >= 8.4F && maxTemp < 12.6F )
-	//		{
-	//			weatherView.setDrawableId(R.drawable.winter_3);
-	//		}
-	//		else if( maxTemp >= 12.6F && maxTemp < 16.8F )
-	//		{
-	//			weatherView.setDrawableId(R.drawable.winter_4);
-	//		}
-	//		else if( maxTemp >= 16.8F && maxTemp < 21F )
-	//		{
-	//			weatherView.setDrawableId(R.drawable.spring_5_19); // 17 tmp
-	//		}
-	//		else if( maxTemp >= 21F && maxTemp < 25.2F )
-	//		{
-	//			weatherView.setDrawableId(R.drawable.spring_6);
-	//		}
-	//		else if( maxTemp >= 25.2F && maxTemp < 29.4F )
-	//		{
-	//			weatherView.setDrawableId(R.drawable.summer_7_25);
-	//		}
-	//		else if( maxTemp >= 29.4F && maxTemp < 33.6F )
-	//		{
-	//			weatherView.setDrawableId(R.drawable.summer_8);
-	//		}
-	//		else if( maxTemp >= 33.6F && maxTemp < 37.8F )
-	//		{
-	//			weatherView.setDrawableId(R.drawable.summer_9);
-	//		}
-	//		else if( maxTemp >= 37.8F ) // till 42 tmp
-	//		{
-	//			weatherView.setDrawableId(R.drawable.summer_10);
-	//		}
-	//		else
-	//		{
-	//			Log.v("Yaron", "Image not found on range.");
-	//		}
-	//	}
+	}	
 }

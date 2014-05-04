@@ -5,13 +5,9 @@ import home.yaron.testsApp.R;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
-import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
-import android.graphics.Rect;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -62,26 +58,11 @@ public class WeatherListFragment extends Fragment implements OnClickListener
 		weatherForcastData = gsonHelper.loadWeatherData(getActivity(),GsonHelper.JSON_FILE_NAME); // parse the json string from file.
 
 		if( weatherForcastData != null )
-			setListAdapterAndHeader();
-
-		//		WeatherAdapter adapter = new WeatherAdapter(this.getActivity().getApplicationContext(),
-		//				weatherForcastData.getWeatherList(),
-		//				R.layout.weather_item,
-		//				new String[] {WeatherForcast.MAX},
-		//				new int[] { R.id.item_weather_name },
-		//				weatherForcastData.getAverage());
-		//
-		//		listView.setAdapter(adapter);
-
-		//		TextView cityView = (TextView)fragmentView.findViewById(R.id.fragment_weather_city);
-		//		cityView.setText(weatherForcastData.getCityName());
-		//		//setDatesToViews(fragmentView);		
+			setListAdapterAndHeader();				
 
 		// Search button.
 		Button searchButton = (Button)fragmentView.findViewById(R.id.fragment_weather_search_button);		
-		searchButton.setOnClickListener(this);	
-		//		int w = searchButton.getWidth();
-		//		int h = searchButton.getHeight();
+		searchButton.setOnClickListener(this);			
 
 		return fragmentView;
 	}
@@ -113,27 +94,12 @@ public class WeatherListFragment extends Fragment implements OnClickListener
 		dateFromView.setText(weatherForcastData.getStartDate());
 		TextView dateToView = (TextView)fragmentView.findViewById(R.id.fragment_weather_date_to);				
 		dateToView.setText(weatherForcastData.getEndDate());
-	}
-
-	//	private void setDatesToViews(View fragmentView)
-	//	{
-	//		// Set dates		
-	//		TextView dateFromView = (TextView)fragmentView.findViewById(R.id.fragment_weather_date_from);				
-	//		dateFromView.setText(weatherForcastData.getStartDate());
-	//		TextView dateToView = (TextView)fragmentView.findViewById(R.id.fragment_weather_date_to);				
-	//		dateToView.setText(weatherForcastData.getEndDate());
-	//	}
+	}	
 
 	private class JsonAsyncLoad extends AsyncTask<URL, Void, WeatherForcastData>
-	{
-		//private Activity contextActivity;
+	{		
 		private Button button;
-		private ProgressBar progressBar;
-
-		//		JsonAsyncLoad(Activity activity)
-		//		{
-		//			contextActivity = activity;
-		//		}
+		private ProgressBar progressBar;		
 
 		@Override
 		protected void onPreExecute()
@@ -156,13 +122,7 @@ public class WeatherListFragment extends Fragment implements OnClickListener
 		{
 			GsonHelper gsonHelper = new GsonHelper();			
 			return gsonHelper.loadWeatherData(getActivity().getBaseContext(), urls[0]);			
-		}		
-
-		//	@Override
-		//	protected void onProgressUpdate(Void... values)
-		//	{		
-		//		super.onProgressUpdate(values);
-		//	}
+		}			
 
 		@Override
 		protected void onPostExecute(WeatherForcastData result)
@@ -191,14 +151,7 @@ public class WeatherListFragment extends Fragment implements OnClickListener
 		@Override
 		protected void onCancelled()
 		{				
-			super.onCancelled();
-			//			if( jsonProgressDialog != null && jsonProgressDialog.isShowing() )
-			//				jsonProgressDialog.cancel();
-
-			//			if( jsonHandler != null )
-			//				jsonHandler.abortHttpRequest();
-
-			//contextActivity = null;
+			super.onCancelled();			
 		}
 	}
 
@@ -223,7 +176,7 @@ public class WeatherListFragment extends Fragment implements OnClickListener
 	private void updateListItem()
 	{
 		// Change data.
-		List<Map<String, Object>> list =(List<Map<String, Object>>)weatherForcastData.getWeatherList();
+		List<Map<String, Object>> list = (List<Map<String, Object>>)weatherForcastData.getWeatherList();
 		list.get(2).put(WeatherForcast.MAX,19.4F); // for debug only.
 
 		// Notify adapter.
@@ -237,7 +190,7 @@ public class WeatherListFragment extends Fragment implements OnClickListener
 
 		try
 		{
-			String urlString = TryActivity2.URL_WEATHER_FORCAST.replace("MyCity", city.trim());
+			String urlString = MainActivity.URL_WEATHER_FORCAST.replace("MyCity", city.trim());
 			weatherUrl = new URL(urlString);		
 		}
 		catch(MalformedURLException e)

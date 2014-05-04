@@ -2,7 +2,7 @@ package home.yaron.weather;
 
 import java.util.ArrayList;
 
-public class WeatherForcast 
+public class WeatherForcast
 {	
 	public static final String MAX = "max";	
 	public static final String HUMIDITY = "humidity";
@@ -64,20 +64,5 @@ public class WeatherForcast
 			String description;
 			String icon;			
 		}
-	}
-
-//	public void setFromToDates()
-//	{
-//		long maxDt = Long.MIN_VALUE;
-//		long minDt = Long.MAX_VALUE;
-//
-//		for( WList item : list)
-//		{			
-//			if( item.dt > maxDt) maxDt = item.dt;
-//			if( item.dt < maxDt) minDt = item.dt;
-//		}
-//
-//		this.fromDate = new Date(minDt * 1000); // Convert to Java date.
-//		this.toDate = new Date(maxDt * 1000);
-//	}	 
+	}	 
 }

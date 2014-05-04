@@ -172,45 +172,7 @@ public class WeatherView extends View
 
 		setMeasuredDimension(width,drawableHeight);
 	}
-	//	    
-	////	    int width = getMeasuredWidth();
-	////	    int height = getMeasuredHeight();
-	////	 
-	////	    int colWidth = width / 5;
-	////	    
-	////	    Drawable drawable = getResources().getDrawable(R.drawable.ic_menu_cc);
-	////	    Rect drawableRect = drawable.getBounds();
-	////	    
-	////	    float scaleFactor = height/ drawableRect.height();
-	//	    
-	////	    int width1 = MeasureSpec.getSize(widthMeasureSpec);
-	////	    int height1 = MeasureSpec.getSize(heightMeasureSpec);
-	//
-	//	    
-	//	    
-	//	    
-	////	    Drawable drawable = getResources().getDrawable(R.drawable.ic_menu_cc);
-	////	    
-	////	    Rect bounds = drawable.getBounds();
-	////	    int width1 = bounds.width();
-	////	    int hight1 = bounds.height();
-	//	    
-	//	    setMeasuredDimension(width, height);
-	//	    
-	//	  
-	//	}
-	//		// Try for a width based on our minimum
-	//		int minw = getPaddingLeft() + getPaddingRight() + getSuggestedMinimumWidth();
-	//		int w = resolveSizeAndState(minw, widthMeasureSpec, 1);
-	//
-	//		// Whatever the width ends up being, ask for a height that would let the pie
-	//		// get as big as it can
-	//		int minh = MeasureSpec.getSize(w) - (int)mTextWidth + getPaddingBottom() + getPaddingTop();
-	//		int h = resolveSizeAndState(MeasureSpec.getSize(w) - (int)mTextWidth, heightMeasureSpec, 0);
-	//
-	//		setMeasuredDimension(w, h);
-	//	}
-
+	
 	@Override
 	protected void onDraw(Canvas canvas) 
 	{		

@@ -26,9 +26,9 @@ public class WeatherForcastData
 	private String endDate;	
 
 	public List<? extends Map<String, ?>> getWeatherList()
-			{
+	{
 		return weatherList;
-			}
+	}
 
 	public void setWeatherList(List<? extends Map<String, ?>> weatherList)
 	{

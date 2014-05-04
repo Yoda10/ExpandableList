@@ -167,8 +167,7 @@ public class WeatherView extends View
 		if( !isSetHeightByDrawble() )
 			return;
 
-		int width = getMeasuredWidth();
-		int height = getMeasuredHeight();
+		int width = getMeasuredWidth();		
 
 		setMeasuredDimension(width,drawableHeight);
 	}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ExpandableList</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_search">Search</string>
+     <string name="button_search_problem">Problem !</string>
+    <string name="json1">
+{
+	"employees": [
+		{ "firstName":"John" , "lastName":"Doe" }, 
+		{ "firstName":"Anna" , "lastName":"Smith" }, 
+		{ "firstName":"Peter" , "lastName":"Jones" }
+	]
+}
+</string>
+<string name="json2">
+{
+    "xxx": [
+        {
+            "id": 912345678901,
+            "text": "zzz",
+            "geo": null,
+            "user": {
+                "name": "android_newb",
+                "followers_count": 41
+            }
+        },
+        {
+            "id": 912345678902,
+            "text": "mmm",
+            "geo": [
+                50.454722,
+                -104.606667
+            ],
+            "user": {
+                "name": "jesse",
+                "followers_count": 2
+            }
+        }
+    ]
+}
+</string>
+<string name="json3">
+{
+	"sys":
+	   {
+	      "country":"GB",
+	      "sunrise":1381107633,
+	      "sunset":1381149604
+	   },
+	"weather":
+	[
+	   {
+	      "id":711,
+	      "main":"Smoke",
+	      "description":"smoke",
+	      "icon":"50n"
+	   }
+	],
+	"main":
+	   {
+	      "temp":304.15,
+	      "pressure":1009
+	   }
+}
+</string>
+<string name="weather">
+{
+    "id": 88319,
+    "dt": 1345284000,
+    "name": "Benghazi",
+    "coord": {
+        "lat": 32.12,
+        "lon": 20.07
+    },
+    "main": {
+        "temp": 306.15,
+        "pressure": 1013,
+        "humidity": 44,
+        "temp_min": 306,
+        "temp_max": 306
+    },
+    "wind": {
+        "speed": 1,
+        "deg": -7
+    },
+    "weather": [
+        {
+            "id": 520,
+            "main": "Rain",
+            "description": "light_intensity_shower_rain",
+            "icon": "09d"
+        },
+        {
+            "id": 500,
+            "main": "Rain",
+            "description": "light_rain",
+            "icon": "10d"
+        },
+        {
+            "id": 701,
+            "main": "Mist",
+            "description": "mist",
+            "icon": "50d"
+        }
+    ],
+    "clouds": {
+        "all": 90
+    },
+    "rain": {
+        "3h": 3
+    }
+}    
+</string>
+</resources>

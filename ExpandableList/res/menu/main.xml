@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/main_menu_action_1"
+        android:icon="@drawable/ic_menu_cc"
+        android:showAsAction="ifRoom"
+        android:title="action1"/>
+    <item
+        android:id="@+id/main_menu_action_2"
+        android:showAsAction="ifRoom"
+        android:title="action2"/>
+
+</menu>

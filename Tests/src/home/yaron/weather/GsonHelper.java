@@ -1,7 +1,7 @@
-package home.yaron.customViews;
+package home.yaron.weather;
 
-import home.yaron.customViews.WeatherForcast.WList;
 import home.yaron.tests.JsonHelper;
+import home.yaron.weather.WeatherForcast.WList;
 
 import java.io.BufferedReader;
 import java.io.File;

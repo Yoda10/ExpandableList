@@ -1,4 +1,4 @@
-package home.yaron.customViews;
+package home.yaron.weather;
 
 import java.util.ArrayList;
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/try2_fragment1"
-        android:name="home.yaron.customViews.WeatherListFragment"
+        android:name="home.yaron.weather.WeatherListFragment"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 

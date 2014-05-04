@@ -1,4 +1,4 @@
-package home.yaron.customViews;
+package home.yaron.weather;
 
 import home.yaron.testsApp.R;
 import android.content.Context;

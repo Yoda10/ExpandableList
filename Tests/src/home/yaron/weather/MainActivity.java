@@ -1,6 +1,6 @@
 package home.yaron.weather;
 
-import home.yaron.testsApp.R;
+import home.yaron.XWeather.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;

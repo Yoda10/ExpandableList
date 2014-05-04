@@ -1,6 +1,6 @@
 package home.yaron.weather;
 
-import home.yaron.testsApp.R;
+import home.yaron.XWeather.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;

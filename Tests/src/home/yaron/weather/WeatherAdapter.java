@@ -1,6 +1,6 @@
 package home.yaron.weather;
 
-import home.yaron.testsApp.R;
+import home.yaron.XWeather.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

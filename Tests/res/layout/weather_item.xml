@@ -9,7 +9,7 @@
         android:id="@+id/item_weather_sun"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        custom:drawableId="@drawable/summer_9"
+        custom:drawableId="@drawable/snowman"
         custom:position="5"
         custom:setHeightByDrawble="true"
         custom:steps="30"

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ExpandableList</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="button_search">Search</string>
-     <string name="button_search_problem">Problem !</string>
+    <string name="app_name">ExpandableList</string>    
+    <string name="main_menu_action_1">action1</string>
+    <string name="main_menu_action_2">action2</string>
+    <string name="fragment_about_text">About</string>
+    <string name="fragment_list_header">Contacts from JSON</string>    
     <string name="json1">
 {
 	"employees": [

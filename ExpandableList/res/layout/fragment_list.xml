@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:textColor="#FFF38585"
         android:textSize="15sp"
-        android:text="Contacts from JSON">
+        android:text="@string/fragment_list_header">
     </TextView>
     <ExpandableListView
         android:id="@+id/main_contacts_list"

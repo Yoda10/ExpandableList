@@ -71,7 +71,7 @@ public class JsonHelper
 	public String jsonExamples()
 	{
 		String ret = null;
-		
+
 		try
 		{
 			// JSON 1
@@ -95,14 +95,14 @@ public class JsonHelper
 			JSONObject json4 = new JSONObject(myJson4);
 			JSONObject clouds = json4.getJSONObject("clouds");
 			int all = clouds.getInt("all");
-			
+
 			ret = lastName+" "+Double.toString(sec)+" "+sunset+" "+all;
 		} 
 		catch (JSONException e)
 		{
 			e.printStackTrace();
 		}
-		
+
 		return ret;
 	}
 
@@ -151,9 +151,6 @@ public class JsonHelper
 
 	public JsonContactResult JsonContactsToLists(JSONObject jsonObject) throws JSONException
 	{
-		//contactGroupList = new ArrayList<Map<String,String>>();
-		//contactChildList = new ArrayList<List<Map<String,String>>>();
-
 		JsonContactResult jsonContactResult = new JsonContactResult();
 
 		JSONArray contacts = jsonObject.getJSONArray("contacts");

@@ -67,16 +67,6 @@ public class ListFragment extends Fragment
 		fragmentView = inflater.inflate(R.layout.fragment_list, container, false);
 
 		ExpandableListView contactListView = (ExpandableListView)fragmentView.findViewById(R.id.main_contacts_list);
-//		contactListView.setOnChildClickListener(new OnChildClickListener()
-//		{
-//			@Override
-//			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id)
-//			{
-//				rememberListSelection();
-//				return true;
-//			}
-//		});
-		
 		contactListView.setOnGroupClickListener(new OnGroupClickListener()
 		{
 			@Override
@@ -85,50 +75,13 @@ public class ListFragment extends Fragment
 				rememberListSelection(groupPosition);
 				return false;
 			}			
-		});
-		
-//		contactListView.setOnItemSelectedListener(new OnItemSelectedListener()
-//		{
-//			@Override
-//			public void onItemSelected(AdapterView<?> parent, View view,int position, long id) 
-//			{
-//				rememberListSelection(position);				
-//			}
-//
-//			@Override
-//			public void onNothingSelected(AdapterView<?> parent) 
-//			{
-//				// do nothing				
-//			}			
-//		});
-		
-//		contactListView.setOnItemClickListener(new OnItemClickListener()
-//		{
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View view,int position, long id)
-//			{
-//				rememberListSelection();
-//			}			
-//		});
-		
-		return fragmentView;	
-	}
+		});		
 
-//	@Override
-//	public void onSaveInstanceState(Bundle outState)
-//	{			
-//		super.onSaveInstanceState(outState);				
-//		rememberListSelection(-1);
-//	}
-	
+		return fragmentView;	
+	}	
+
 	private void rememberListSelection(int position)
 	{
-//		if( position < 0 )
-//		{
-//			ExpandableListView listView = (ExpandableListView)fragmentView.findViewById(R.id.main_contacts_list);		
-//			position = listView.getSelectedItemPosition();			
-//		}
-		
 		((MainActivity)getActivity()).setListSelection(position);
 	}
 
@@ -179,13 +132,7 @@ public class ListFragment extends Fragment
 			}			
 
 			return jsonContactResult;
-		}
-
-		//	@Override
-		//	protected void onProgressUpdate(Void... values)
-		//	{		
-		//		super.onProgressUpdate(values);
-		//	}
+		}		
 
 		@Override
 		protected void onPostExecute(JsonContactResult result)
@@ -195,14 +142,7 @@ public class ListFragment extends Fragment
 
 			if( result != null )
 			{
-				ExpandableListView contactListView = (ExpandableListView)fragmentView.findViewById(R.id.main_contacts_list);
-
-				//				// Set ExpandableListAdapter - custom way with adapter.
-				//				ContactExpandableListAdapter expListAdapter = new ContactExpandableListAdapter(
-				//						contextActivity, 
-				//						result.getContactGroupList(),
-				//						result.getContactChildList()
-				//						);
+				ExpandableListView contactListView = (ExpandableListView)fragmentView.findViewById(R.id.main_contacts_list);				
 
 				// Set SimpleExpandableListAdapter. - fast way
 				SimpleExpandableListAdapter expListAdapter = new SimpleExpandableListAdapter(
@@ -218,7 +158,7 @@ public class ListFragment extends Fragment
 						);
 
 				contactListView.setAdapter(expListAdapter);
-				
+
 				// Set user selection on the list.
 				int listSelection = ((MainActivity)getActivity()).getListSelection();				
 				if( listSelection != ListFragment.LIST_SELECTION_INIT ) 

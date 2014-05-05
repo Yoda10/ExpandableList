@@ -55,33 +55,7 @@ public class ContactExpandableListAdapter extends BaseExpandableListAdapter {
 		TextView mobile = (TextView)convertView.findViewById(R.id.child_mobile);
 		mobile.setText(childEntry.get("mobile"));
 		TextView office = (TextView)convertView.findViewById(R.id.child_office);
-		office.setText(childEntry.get("office"));
-
-		//		ImageView delete = (ImageView) convertView.findViewById(R.id.child_home);
-		//		delete.setOnClickListener(new OnClickListener() {
-		//			public void onClick(View v) {
-		//				AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		//				builder.setMessage("Do you want to remove?");
-		//				builder.setCancelable(false);
-		//				builder.setPositiveButton("Yes",
-		//						new DialogInterface.OnClickListener() {
-		//					public void onClick(DialogInterface dialog, int id) {
-		//						List<String> child =
-		//								contactChildList.get(contactGroupList.get(groupPosition));
-		//						child.remove(childPosition);
-		//						//notifyDataSetChanged();
-		//					}
-		//				});
-		//				builder.setNegativeButton("No",
-		//						new DialogInterface.OnClickListener() {
-		//					public void onClick(DialogInterface dialog, int id) {
-		//						dialog.cancel();
-		//					}
-		//				});
-		//				AlertDialog alertDialog = builder.create();
-		//				alertDialog.show();
-		//			}
-		//		});
+		office.setText(childEntry.get("office"));	
 
 		return convertView;
 	}

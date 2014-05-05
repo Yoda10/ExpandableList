@@ -17,8 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
-            android:layout_marginTop="12dp"
-            android:text="Jerusalem"
+            android:layout_marginTop="12dp"            
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" >
@@ -29,8 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/fragment_weather_city"
-            android:layout_centerInParent="true"
-            android:text="12/04/2014"
+            android:layout_centerInParent="true"            
             android:textColor="@android:color/black"
             android:textSize="15sp" >
         </TextView>
@@ -40,8 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/fragment_weather_date_from"
-            android:layout_centerInParent="true"
-            android:text="17/04/2014"
+            android:layout_centerInParent="true"            
             android:textColor="@android:color/black"
             android:textSize="15sp" >
         </TextView>
@@ -53,7 +50,7 @@
             android:layout_below="@+id/fragment_weather_date_to"
             android:layout_centerInParent="true"
             android:layout_marginTop="45dp"
-            android:hint="City"
+            android:hint="@string/text_search_hint"
             android:inputType="text"
             android:maxWidth="130dp"
             android:textColor="@android:color/black"

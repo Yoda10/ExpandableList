@@ -17,8 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
-            android:layout_marginTop="12dp"
-            android:text="Jerusalem"
+            android:layout_marginTop="12dp"           
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" >
@@ -35,8 +34,7 @@
             <TextView
                 android:id="@+id/fragment_weather_date_from"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12/04/2014"
+                android:layout_height="wrap_content"                
                 android:textColor="@android:color/black"
                 android:textSize="15sp" >
             </TextView>
@@ -45,8 +43,7 @@
                 android:id="@+id/fragment_weather_date_sperator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="-"
+                android:layout_marginLeft="10dp"                
                 android:textColor="@android:color/black"
                 android:textSize="15sp" >
             </TextView>
@@ -55,8 +52,7 @@
                 android:id="@+id/fragment_weather_date_to"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="17/04/2014"
+                android:layout_marginLeft="10dp"                
                 android:textColor="@android:color/black"
                 android:textSize="15sp" >
             </TextView>
@@ -89,7 +85,7 @@
                 android:id="@+id/fragment_weather_search_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="City"
+                android:hint="@string/text_search_hint"
                 android:inputType="text"
                 android:maxWidth="130dp"
                 android:textColor="@android:color/black"
@@ -102,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginLeft="10dp"
-                android:text="@string/button_search">"
+                android:text="@string/button_search">
             </Button>
         </LinearLayout>
     </RelativeLayout>

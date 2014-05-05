@@ -4,8 +4,8 @@ import home.yaron.XWeather.R;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import android.app.Fragment;
 import android.os.AsyncTask;
@@ -176,7 +176,7 @@ public class WeatherListFragment extends Fragment implements OnClickListener
 	private void updateListItem()
 	{
 		// Change data.
-		List<Map<String, Object>> list = (List<Map<String, Object>>)weatherForcastData.getWeatherList();
+		List<HashMap<String, Object>> list = (List<HashMap<String, Object>>)weatherForcastData.getWeatherList();
 		list.get(2).put(WeatherForcast.MAX,19.4F); // for debug only.
 
 		// Notify adapter.

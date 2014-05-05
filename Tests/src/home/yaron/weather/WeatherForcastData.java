@@ -1,7 +1,6 @@
 package home.yaron.weather;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -19,18 +18,18 @@ public class WeatherForcastData
 	public static final String HEAT_INDEX = "heatIndex";
 	public static final float HEAT_INDEX_ENTRY_TEMPERATURE = 26.7F;
 
-	private List<? extends Map<String, ?>> weatherList = null;
+	private List<HashMap<String, Object>> weatherList = null;
 	private int average;
 	private String cityName;
 	private String startDate;
 	private String endDate;	
 
-	public List<? extends Map<String, ?>> getWeatherList()
+	public List<HashMap<String, Object>> getWeatherList()
 	{
 		return weatherList;
 	}
 
-	public void setWeatherList(List<? extends Map<String, ?>> weatherList)
+	public void setWeatherList(List<HashMap<String, Object>> weatherList)
 	{
 		this.weatherList = weatherList;
 	}
@@ -74,7 +73,7 @@ public class WeatherForcastData
 		endDate = dateFormat.format(dateTo);
 	}
 
-	public void computeAverageTemperature(ArrayList<HashMap<String, Object>> list)
+	public void computeAverageTemperature(List<HashMap<String, Object>> list)
 	{
 		// Calculate average.
 		float total = 0;		
@@ -99,7 +98,7 @@ public class WeatherForcastData
 		}
 	}
 
-	public void orderList(ArrayList<HashMap<String, Object>> list)
+	public void orderList(List<HashMap<String, Object>> list)
 	{
 		Collections.sort(list, new MapComparator());
 	}	
@@ -141,7 +140,7 @@ public class WeatherForcastData
 		return (float)(1.8 * Cels + 32);		
 	}
 
-	public void addHeatIndexToList(ArrayList<HashMap<String, Object>> list)
+	public void addHeatIndexToList(List<HashMap<String, Object>> list)
 	{
 		// Calculate heat index.
 		for( Map<String, Object> listItem : list)

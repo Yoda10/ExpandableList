@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -115,9 +116,9 @@ public class GsonHelper
 		return gson.fromJson(jsonString, WeatherForcast.class);		
 	}
 
-	public ArrayList<HashMap<String, Object>> weatherForcastToMap(WeatherForcast weatherForcast)
+	public List<HashMap<String, Object>> weatherForcastToMap(WeatherForcast weatherForcast)
 	{
-		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String,Object>>(weatherForcast.list.size());
+		List<HashMap<String, Object>> list = new ArrayList<HashMap<String,Object>>(weatherForcast.list.size());
 
 		for( WList listItem : weatherForcast.list )
 		{
@@ -181,7 +182,7 @@ public class GsonHelper
 
 	private WeatherForcastData processWeatherJson(String jsonString)
 	{
-		ArrayList<HashMap<String, Object>> list = null;
+		List<HashMap<String, Object>> list = null;
 		WeatherForcastData weatherForcastData = new WeatherForcastData();		
 
 		try

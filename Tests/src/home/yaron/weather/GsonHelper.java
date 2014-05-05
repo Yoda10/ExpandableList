@@ -31,10 +31,13 @@ import com.google.gson.Gson;
 public class GsonHelper
 {
 	public final static String ASSET_WHEATHER_JERUSALEM_JSON = "WheatherJerusalemJson.txt";
-	public static final String JSON_FILE_NAME = "JsonWeather.json";	
-	
+	public final static String JSON_FILE_NAME = "JsonWeather.json";	
+
 	private HttpPost httpPost;
 
+	/**
+	 * Http connection with apache http objects.
+	 */
 	public String loadingJsonFromUrl(String url) throws ClientProtocolException, IOException
 	{
 		String result = null;
